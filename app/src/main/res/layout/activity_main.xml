@@ -13,13 +13,21 @@
         android:id="@+id/tv_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="National Flag Quiz"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="0dp"
+        android:gravity="center"
+        android:text="PUBG Mobile Quiz"
+        android:textColor="@color/title"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
-        android:gravity="center"
-         />
+        />
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/top" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -41,26 +49,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Welcome"
-                android:textColor="@android:color/black"
-                android:textSize="20dp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
+                android:paddingTop="0dp"
                 android:text="名前を入力してください"
-                android:paddingTop="8dp"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="12dp"
-                android:textStyle="bold"/>
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                android:layout_marginTop="20dp">
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/et_name"
@@ -68,8 +67,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Name..."
                     android:textColor="@android:color/darker_gray"
-                    android:textColorHint="@android:color/darker_gray"
-                    />
+                    android:textColorHint="@android:color/darker_gray" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -78,14 +76,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="@color/purple_200"
                 android:text="Start"
+                android:textColor="@color/title"
                 android:textSize="18sp"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                >
-
-            </Button>
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
