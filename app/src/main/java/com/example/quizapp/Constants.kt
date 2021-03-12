@@ -12,7 +12,7 @@ object Constants {
         val questionsList = ArrayList<Question>()
         val que1 = Question(
             1, Q_SENTENSE, R.drawable.scar,
-            "SCAR-L", "AKM", "SCAT", "チェコ", 1
+            "SCAR-L", "AKM", "SCAT", "AWM", 1
         )
         questionsList.add(que1)
 
