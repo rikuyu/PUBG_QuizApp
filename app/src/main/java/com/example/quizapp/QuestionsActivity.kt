@@ -15,7 +15,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var mCurrentPosition: Int = 1
     private var mQuestionsList: ArrayList<Question>? = null
     private var mSelectedOptionPosition: Int = 0
-    private var mCorrectAnswer: Int = 0
+    private var mCorrectAnswer: Int = 0     //正解数
     private var mUserName: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,12 +49,18 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         progressBar.progress = mCurrentPosition
         tv_progress.text = "$mCurrentPosition" + "/" + progressBar.max
         tv_question.text = question!!.question
+        tv_question.setTypeface(tv_question.typeface, Typeface.ITALIC)
         iv_image.setImageResource(question.image)
 
         tv_option_one.text = question.optiionOne
         tv_option_two.text = question.optiionTwo
         tv_option_three.text = question.optiionThree
         tv_option_four.text = question.optiionFour
+
+        tv_option_one.setTypeface(tv_question.typeface, Typeface.ITALIC)
+        tv_option_two.setTypeface(tv_question.typeface, Typeface.ITALIC)
+        tv_option_three.setTypeface(tv_question.typeface, Typeface.ITALIC)
+        tv_option_four.setTypeface(tv_question.typeface, Typeface.ITALIC)
     }
 
     private fun defaultOptionsView() {
@@ -65,7 +71,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         options.add(3, tv_option_four)
 
         for (option in options) {
-            option.setTextColor(Color.parseColor("#FFFFFF"))
+            option.setTextColor(Color.parseColor("#ffd300"))
             option.typeface = Typeface.DEFAULT
             option.background = ContextCompat.getDrawable(this, R.drawable.default_option_border_bg)
         }
@@ -86,7 +92,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                 selectedOptionView(tv_option_four, 4)
             }
             R.id.btn_submit -> {
-                if (mSelectedOptionPosition == 0) {
+                if (mSelectedOptionPosition == 0) { //未回答の場合
                     mCurrentPosition++
 
                     when {
@@ -143,7 +149,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         defaultOptionsView()
         mSelectedOptionPosition = selectedOptionNum
         tv.setTextColor(Color.parseColor("#ffd300"))
-        tv.setTypeface(tv.typeface, Typeface.BOLD)
+        tv.setTypeface(tv.typeface, Typeface.ITALIC)
         tv.background = ContextCompat.getDrawable(this, R.drawable.selected_option_border_bg)
     }
 }

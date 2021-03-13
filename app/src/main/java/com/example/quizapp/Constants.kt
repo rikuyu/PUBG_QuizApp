@@ -7,7 +7,7 @@ object Constants {
     const val CORRECT_ANSWER: String = "correct_answer"
 
     fun getQuestions(): ArrayList<Question> {
-        val Q_SENTENSE: String = "この武器の名前は？"
+        val Q_SENTENSE: String = "What is the name of this weapon ?"
 
         val questionsList = ArrayList<Question>()
         val que1 = Question(

@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_result.*
 
 class ResultActivity : AppCompatActivity() {
@@ -20,9 +22,24 @@ class ResultActivity : AppCompatActivity() {
 
         tv_score.text = "Your Score $correctAnswer / $totalQuestions"
 
+        val score = Score(username!!, correctAnswer)
+
         btn_restart.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            saveFireStore(score)
+            val intent = Intent(this, Ranking::class.java)
+            intent.putExtra(Constants.USER_NAME, username)
+            intent.putExtra(Constants.CORRECT_ANSWER, correctAnswer)
+            startActivity(intent)
             finish()
         }
+    }
+
+    fun saveFireStore(score: Score) {
+        val db = FirebaseFirestore.getInstance()
+        db.collection("user_scores").document().set(score)
+//        val user: MutableMap<String, Any> = HashMap()
+//        user["username"] = username
+//        user["score"] = score
+//        db.collection("user_scores").add(user)
     }
 }

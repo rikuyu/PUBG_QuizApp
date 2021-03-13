@@ -18,7 +18,7 @@
         android:text="PUBG Mobile Quiz"
         android:textColor="@color/title"
         android:textSize="25sp"
-        android:textStyle="bold"
+        android:textStyle="italic"
         />
 
     <ImageView
@@ -36,8 +36,7 @@
         android:layout_marginEnd="20dp"
         android:background="@android:color/white"
         app:cardCornerRadius="8dp"
-        app:cardElevation="5dp"
-        >
+        app:cardElevation="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,7 +52,7 @@
                 android:text="名前を入力してください"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="16dp"
-                android:textStyle="bold" />
+                android:textStyle="italic" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -73,16 +72,18 @@
 
             <Button
                 android:id="@+id/btn_start"
-                android:layout_width="match_parent"
+                android:layout_width="337dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:background="@drawable/btn"
                 android:text="Start"
                 android:textColor="@color/title"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="italic"
+
+                />
 
         </LinearLayout>
-
 
     </androidx.cardview.widget.CardView>
 

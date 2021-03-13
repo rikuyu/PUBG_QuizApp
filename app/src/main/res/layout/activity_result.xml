@@ -18,7 +18,7 @@
         android:text="Result"
         android:textColor="@color/title"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/tv_congratulations"
@@ -28,7 +28,7 @@
         android:text="Congratulations!"
         android:textColor="@color/title"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="italic" />
 
     <ImageView
         android:id="@+id/iv_image"
@@ -45,7 +45,7 @@
         android:layout_marginTop="25dp"
         android:textColor="@android:color/white"
         android:textSize="22sp"
-        android:textStyle="bold"
+        android:textStyle="italic"
         tools:text="Username" />
 
     <TextView
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textColor="@color/white"
-        android:textStyle="bold"
+        android:textStyle="italic"
         android:textSize="25sp"
         tools:text="Your Score is 9 out of 10" />
 
@@ -63,10 +63,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Retry"
+        android:text="Show Your Rank"
         android:gravity="center"
+        android:background="@color/cardview_dark_background"
         android:textColor="@color/title"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="italic" />
 
 </LinearLayout>
